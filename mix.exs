@@ -17,7 +17,7 @@ defmodule CredoRuntimeOnly.MixProject do
       source_url: github_url(),
       home_page: github_url(),
       docs: [
-        main: "README",
+        main: "readme",
         api_reference: false,
         extras: ["README.md"]
       ]
