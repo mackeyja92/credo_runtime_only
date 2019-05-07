@@ -13,7 +13,14 @@ defmodule CredoRuntimeOnly.MixProject do
       elixir: "~> 1.7",
       start_permanent: false,
       deps: deps(),
-      package: package()
+      package: package(),
+      source_url: github_url(),
+      home_page: github_url(),
+      docs: [
+        main: "README",
+        api_reference: false,
+        extras: ["README.md"]
+      ]
     ]
   end
 
@@ -34,7 +41,11 @@ defmodule CredoRuntimeOnly.MixProject do
     [
       name: "credo_runtime_only",
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/mackeyja92/credo_runtime_only"}
+      links: %{"GitHub" => github_url()}
     ]
+  end
+
+  defp github_url() do
+    "https://github.com/mackeyja92/credo_runtime_only"
   end
 end
