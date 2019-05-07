@@ -12,7 +12,8 @@ defmodule CredoRuntimeOnly.MixProject do
       version: @version,
       elixir: "~> 1.7",
       start_permanent: false,
-      deps: deps()
+      deps: deps(),
+      package: package()
     ]
   end
 
@@ -26,6 +27,14 @@ defmodule CredoRuntimeOnly.MixProject do
     [
       {:credo, "~> 1.0"},
       {:ex_doc, ">= 0.0.0", only: :dev}
+    ]
+  end
+
+  defp package do
+    [
+      name: "credo_runtime_only",
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/mackeyja92/credo_runtime_only"}
     ]
   end
 end

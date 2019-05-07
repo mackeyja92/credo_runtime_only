@@ -15,6 +15,18 @@ def deps do
 end
 ```
 
+```elixir
+# .credo.exs if you have one
+%{
+  configs: [
+    checks: [
+      {CredoRuntimeOnly.Check.Warning.SystemGetEnv},
+      ...
+    ]
+  ]
+}
+```
+
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/credo_runtime_only](https://hexdocs.pm/credo_runtime_only).
