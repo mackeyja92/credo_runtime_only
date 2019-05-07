@@ -16,7 +16,7 @@ defmodule CredoRuntimeOnly.Check.Warning.SystemGetEnvTest do
 
   test "it should report violation calling System.get_env outside of a module" do
     """
-    System.get_env(:variable)
+    System.get_env("VARIABLE")
     """
     |> to_source_file()
     |> assert_issue(@described_check)
@@ -25,7 +25,7 @@ defmodule CredoRuntimeOnly.Check.Warning.SystemGetEnvTest do
   test "it should report violation calling System.get_env at module level" do
     """
     defmodule IEx.Bar do
-      System.get_env(:variable)
+      System.get_env("VARIABLE")
     end
     """
     |> to_source_file()
@@ -36,7 +36,7 @@ defmodule CredoRuntimeOnly.Check.Warning.SystemGetEnvTest do
     """
     defmodule IEx.Bar do
       def get_value do
-        System.get_env(:variable)
+        System.get_env("VARIABLE")
       end
     end
     """
@@ -48,11 +48,11 @@ defmodule CredoRuntimeOnly.Check.Warning.SystemGetEnvTest do
     """
     defmodule IEx.Bar do
       def get_value do
-        System.get_env(:variable)
+        System.get_env("VARIABLE")
       end
 
       def get_other do
-        System.get_env(:other)
+        System.get_env("VARIABLE")
       end
     end
     """
