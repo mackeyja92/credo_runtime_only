@@ -75,4 +75,16 @@ defmodule CredoRuntimeOnly.Check.Warning.SystemGetEnvTest do
     |> to_source_file()
     |> refute_issues(@described_check)
   end
+
+  test "it should repot violations in Macro calls" do
+    """
+    defmodule IEx.Bar do
+      use Mix.Config
+
+      config :test_app, :test_value, System.get_env("VALUE")
+    end
+    """
+    |> to_source_file()
+    |> assert_issue(@described_check)
+  end
 end
