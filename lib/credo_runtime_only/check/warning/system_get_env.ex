@@ -2,7 +2,7 @@ defmodule CredoRuntimeOnly.Check.Warning.SystemGetEnv do
   @moduledoc false
 
   @checkdoc """
-  Checks for calls to System.get_env/0/1. Calls to this are compile time lookups instead of Runtime lookups.
+  Checks for calls to System.get_env/0/1. Calls to this can be compile time lookups instead of Runtime lookups if used incorrectly.
 
   In most cases, runtime lookups are desired and compile time lookups should be avoided.
   """
